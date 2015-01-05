@@ -1,8 +1,13 @@
 # Site settings
 title: Ultrasonic Anemometer
-email: stuart.feichtinger@gmail.com
+
 description: Test description
 baseurl: /ultrasonic_anemometer # the subpath of your site, e.g. /blog/
+
+author:
+  name : Stuart Feichtinger
+  email: stuart.feichtinger@gmail.com
+  github : stuthedew
 
 
 # Build settings
