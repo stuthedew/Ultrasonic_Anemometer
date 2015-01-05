@@ -1,5 +1,5 @@
 # Site settings
-title: Ultrasonice Anemometer
+title: Ultrasonic Anemometer
 email: stuart.feichtinger@gmail.com
 description: Test description
 baseurl: /ultrasonic_anemometer # the subpath of your site, e.g. /blog/
