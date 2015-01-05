@@ -2,7 +2,7 @@
 title: Ultrasonic Anemometer
 
 description: Test description
-baseurl: /ultrasonic_anemometer # the subpath of your site, e.g. /blog/
+baseurl: /Ultrasonic_Anemometer # the subpath of your site, e.g. /blog/
 
 author:
   name : Stuart Feichtinger
