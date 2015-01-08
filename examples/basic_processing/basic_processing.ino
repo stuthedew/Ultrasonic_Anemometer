@@ -20,9 +20,6 @@ void setup(){
     while (1);
   }
 
-
-
-
 }
 
 void loop(){
@@ -30,9 +27,12 @@ void loop(){
   windSensor.setTemperatureC( tempsensor.readTempC() );
   windSensor.update();
 
-  Serial.print(F("Wind Speed: "));
-  Serial.print(windSensor.windSpeed());
-  Serial.println(F(" m/s\n"));
+  int tmpInt = round(windSensor.windSpeed() * 1000);
+
+  tmpInt = map(tmpInt, -6500, 6500, 0, 1023);
+  Serial.println(tmpInt);
+
+
 
   delay( 500 );
 
