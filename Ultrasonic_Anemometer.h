@@ -9,7 +9,7 @@ class UltrasonicAnemometer {
 
 public:
 
-  UltrasonicAnemometer( int triggerPin, int echoPin, float distanceCM, unsigned long updateInterval = 1000 );
+  UltrasonicAnemometer( int triggerPin, int echoPin, float distanceCM, unsigned long updateInterval = 100 );
 
   void
     begin( void ) ,
@@ -23,11 +23,14 @@ public:
   float
     sensorSpacing( void ) const ,
     speedOfSound( void ) const ,
-    windSpeed( void ) const ;
+    windSpeed( void ) ;
 
 
   int
     pingTravelTime( void ) const ;
+
+  bool
+    ready( void ) const;
 
 
 private:
@@ -64,7 +67,8 @@ private:
   correction_data_t
     _ambient ;
 
-
+    bool
+      _newDataFlag;
 
 /**************************METHODS********************************/
 

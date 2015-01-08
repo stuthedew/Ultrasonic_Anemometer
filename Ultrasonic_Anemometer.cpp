@@ -10,6 +10,7 @@ _triggerPin( triggerPin ), _echoPin(echoPin), _sensorDistanceCM( distanceCM ), _
   _ambient.updateFlag = 0;
 
   _lastUpdateTime = 0;
+  _newDataFlag = 0;
 }
 
 void UltrasonicAnemometer::begin( void ){
@@ -59,8 +60,14 @@ float UltrasonicAnemometer::speedOfSound( void ) const{
   return _speedOfSound ;
 }
 
-float UltrasonicAnemometer::windSpeed( void ) const{
+float UltrasonicAnemometer::windSpeed( void ){
+  _newDataFlag = 0;
   return _windSpeed ;
+}
+
+bool UltrasonicAnemometer::ready() const{
+  return _newDataFlag;
+
 }
 
 
@@ -79,6 +86,7 @@ void UltrasonicAnemometer::_setPingSpeed( unsigned long pingTime ){
 }
 
 void UltrasonicAnemometer::_setWindSpeed( void ){
+  _newDataFlag = 1;
   _windSpeed = _pingSpeed - _speedOfSound;
 }
 
