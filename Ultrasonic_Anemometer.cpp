@@ -4,7 +4,7 @@
 UltrasonicAnemometer::UltrasonicAnemometer( int triggerPin, int echoPin, float distanceCM, unsigned long updateInterval ) :
 _triggerPin( triggerPin ), _echoPin(echoPin), _sensorDistanceCM( distanceCM ), _updateInterval( updateInterval ){
 
-  _ambient.tempC = 0 ;
+  _ambient.tempC = 21 ;
   _ambient.pressure = 0 ;
   _ambient.humidity = 0 ;
   _ambient.updateFlag = 0;
@@ -80,7 +80,7 @@ void UltrasonicAnemometer::_setSpeedOfSound( void ){
 }
 
 void UltrasonicAnemometer::_setPingSpeed( unsigned long pingTime ){
-  //Serial.println(pingTime);
+  Serial.println(pingTime);
   _pingSpeed = _sensorDistanceCM * 10000;
   _pingSpeed /= pingTime;
 }
